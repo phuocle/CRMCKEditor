@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{68670149-40FE-4EA9-A624-572B2C595F69}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CRMCKEditor</RootNamespace>
+    <AssemblyName>CRMCKEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="scripts\library\ckeditor\adapters\jquery.js" />
+    <Content Include="scripts\library\ckeditor\CKEditor.html" />
+    <Content Include="scripts\library\ckeditor\ckeditor.js" />
+    <Content Include="scripts\library\ckeditor\config.js" />
+    <Content Include="scripts\library\ckeditor\contents.css" />
+    <Content Include="scripts\library\ckeditor\CRMWebAPI.js" />
+    <Content Include="scripts\library\ckeditor\CRMWebAPIMetadata.js" />
+    <Content Include="scripts\library\ckeditor\jquery.min.js" />
+    <Content Include="scripts\library\ckeditor\lang\en.js" />
+    <Content Include="scripts\library\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="scripts\library\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="scripts\library\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="scripts\library\ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <Content Include="scripts\library\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="scripts\library\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="scripts\library\ckeditor\plugins\colordialog\dialogs\colordialog.css" />
+    <Content Include="scripts\library\ckeditor\plugins\colordialog\dialogs\colordialog.js" />
+    <Content Include="scripts\library\ckeditor\plugins\crmplaceholder\dialogs\crmplaceholder.js" />
+    <Content Include="scripts\library\ckeditor\plugins\crmplaceholder\icons\crmplaceholder.png" />
+    <Content Include="scripts\library\ckeditor\plugins\crmplaceholder\icons\hidpi\crmplaceholder.png" />
+    <Content Include="scripts\library\ckeditor\plugins\crmplaceholder\lang\en.js" />
+    <Content Include="scripts\library\ckeditor\plugins\crmplaceholder\plugin.js" />
+    <Content Include="scripts\library\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="scripts\library\ckeditor\plugins\div\dialogs\div.js" />
+    <Content Include="scripts\library\ckeditor\plugins\find\dialogs\find.js" />
+    <Content Include="scripts\library\ckeditor\plugins\flash\dialogs\flash.js" />
+    <Content Include="scripts\library\ckeditor\plugins\flash\images\placeholder.png" />
+    <Content Include="scripts\library\ckeditor\plugins\forms\dialogs\button.js" />
+    <Content Include="scripts\library\ckeditor\plugins\forms\dialogs\checkbox.js" />
+    <Content Include="scripts\library\ckeditor\plugins\forms\dialogs\form.js" />
+    <Content Include="scripts\library\ckeditor\plugins\forms\dialogs\hiddenfield.js" />
+    <Content Include="scripts\library\ckeditor\plugins\forms\dialogs\radio.js" />
+    <Content Include="scripts\library\ckeditor\plugins\forms\dialogs\select.js" />
+    <Content Include="scripts\library\ckeditor\plugins\forms\dialogs\textarea.js" />
+    <Content Include="scripts\library\ckeditor\plugins\forms\dialogs\textfield.js" />
+    <Content Include="scripts\library\ckeditor\plugins\forms\images\hiddenfield.gif" />
+    <Content Include="scripts\library\ckeditor\plugins\icons.png" />
+    <Content Include="scripts\library\ckeditor\plugins\icons_hidpi.png" />
+    <Content Include="scripts\library\ckeditor\plugins\iframe\dialogs\iframe.js" />
+    <Content Include="scripts\library\ckeditor\plugins\iframe\images\placeholder.png" />
+    <Content Include="scripts\library\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="scripts\library\ckeditor\plugins\image\images\noimage.png" />
+    <Content Include="scripts\library\ckeditor\plugins\lineutils\plugin.js" />
+    <Content Include="scripts\library\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="scripts\library\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="scripts\library\ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="scripts\library\ckeditor\plugins\link\images\hidpi\anchor.png" />
+    <Content Include="scripts\library\ckeditor\plugins\liststyle\dialogs\liststyle.js" />
+    <Content Include="scripts\library\ckeditor\plugins\magicline\images\hidpi\icon_rtl.png" />
+    <Content Include="scripts\library\ckeditor\plugins\magicline\images\hidpi\icon.png" />
+    <Content Include="scripts\library\ckeditor\plugins\magicline\images\icon_rtl.png" />
+    <Content Include="scripts\library\ckeditor\plugins\magicline\images\icon.png" />
+    <Content Include="scripts\library\ckeditor\plugins\pagebreak\images\pagebreak.gif" />
+    <Content Include="scripts\library\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="scripts\library\ckeditor\plugins\preview\preview.html" />
+    <Content Include="scripts\library\ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="scripts\library\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="scripts\library\ckeditor\plugins\showblocks\images\block_address.png" />
+    <Content Include="scripts\library\ckeditor\plugins\showblocks\images\block_blockquote.png" />
+    <Content Include="scripts\library\ckeditor\plugins\showblocks\images\block_div.png" />
+    <Content Include="scripts\library\ckeditor\plugins\showblocks\images\block_h1.png" />
+    <Content Include="scripts\library\ckeditor\plugins\showblocks\images\block_h2.png" />
+    <Content Include="scripts\library\ckeditor\plugins\showblocks\images\block_h3.png" />
+    <Content Include="scripts\library\ckeditor\plugins\showblocks\images\block_h4.png" />
+    <Content Include="scripts\library\ckeditor\plugins\showblocks\images\block_h5.png" />
+    <Content Include="scripts\library\ckeditor\plugins\showblocks\images\block_h6.png" />
+    <Content Include="scripts\library\ckeditor\plugins\showblocks\images\block_p.png" />
+    <Content Include="scripts\library\ckeditor\plugins\showblocks\images\block_pre.png" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\dialogs\smiley.js" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\angel_smile.gif" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\angel_smile.png" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\angry_smile.gif" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\angry_smile.png" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\broken_heart.gif" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\broken_heart.png" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\confused_smile.gif" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\confused_smile.png" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\cry_smile.gif" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\cry_smile.png" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\devil_smile.gif" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\devil_smile.png" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\embaressed_smile.gif" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\embarrassed_smile.gif" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\embarrassed_smile.png" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\envelope.gif" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\envelope.png" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\heart.gif" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\heart.png" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\kiss.gif" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\kiss.png" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\lightbulb.gif" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\lightbulb.png" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\omg_smile.gif" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\omg_smile.png" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\regular_smile.gif" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\regular_smile.png" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\sad_smile.gif" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\sad_smile.png" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\shades_smile.gif" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\shades_smile.png" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\teeth_smile.gif" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\teeth_smile.png" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\thumbs_down.gif" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\thumbs_down.png" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\thumbs_up.gif" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\thumbs_up.png" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\tongue_smile.gif" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\tongue_smile.png" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\tounge_smile.gif" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\whatchutalkingabout_smile.gif" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\whatchutalkingabout_smile.png" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\wink_smile.gif" />
+    <Content Include="scripts\library\ckeditor\plugins\smiley\images\wink_smile.png" />
+    <Content Include="scripts\library\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="scripts\library\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="scripts\library\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="scripts\library\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="scripts\library\ckeditor\plugins\templates\dialogs\templates.css" />
+    <Content Include="scripts\library\ckeditor\plugins\templates\dialogs\templates.js" />
+    <Content Include="scripts\library\ckeditor\plugins\templates\templates\default.js" />
+    <Content Include="scripts\library\ckeditor\plugins\templates\templates\images\template1.gif" />
+    <Content Include="scripts\library\ckeditor\plugins\templates\templates\images\template2.gif" />
+    <Content Include="scripts\library\ckeditor\plugins\templates\templates\images\template3.gif" />
+    <Content Include="scripts\library\ckeditor\plugins\widget\images\handle.png" />
+    <Content Include="scripts\library\ckeditor\plugins\widget\lang\en.js" />
+    <Content Include="scripts\library\ckeditor\plugins\widget\plugin.js" />
+    <Content Include="scripts\library\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="scripts\library\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="scripts\library\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="scripts\library\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="scripts\library\ckeditor\plugins\wsc\dialogs\wsc_ie.js" />
+    <Content Include="scripts\library\ckeditor\promise.7.0.4.min.js" />
+    <Content Include="scripts\library\ckeditor\skins\moonocolor\dialog.css" />
+    <Content Include="scripts\library\ckeditor\skins\moonocolor\dialog_ie.css" />
+    <Content Include="scripts\library\ckeditor\skins\moonocolor\dialog_ie7.css" />
+    <Content Include="scripts\library\ckeditor\skins\moonocolor\dialog_ie8.css" />
+    <Content Include="scripts\library\ckeditor\skins\moonocolor\dialog_iequirks.css" />
+    <Content Include="scripts\library\ckeditor\skins\moonocolor\editor.css" />
+    <Content Include="scripts\library\ckeditor\skins\moonocolor\editor_gecko.css" />
+    <Content Include="scripts\library\ckeditor\skins\moonocolor\editor_ie.css" />
+    <Content Include="scripts\library\ckeditor\skins\moonocolor\editor_ie7.css" />
+    <Content Include="scripts\library\ckeditor\skins\moonocolor\editor_ie8.css" />
+    <Content Include="scripts\library\ckeditor\skins\moonocolor\editor_iequirks.css" />
+    <Content Include="scripts\library\ckeditor\skins\moonocolor\icons.png" />
+    <Content Include="scripts\library\ckeditor\skins\moonocolor\icons_hidpi.png" />
+    <Content Include="scripts\library\ckeditor\skins\moonocolor\images\arrow.png" />
+    <Content Include="scripts\library\ckeditor\skins\moonocolor\images\close.png" />
+    <Content Include="scripts\library\ckeditor\skins\moonocolor\images\hidpi\close.png" />
+    <Content Include="scripts\library\ckeditor\skins\moonocolor\images\hidpi\lock_open.png" />
+    <Content Include="scripts\library\ckeditor\skins\moonocolor\images\hidpi\lock.png" />
+    <Content Include="scripts\library\ckeditor\skins\moonocolor\images\hidpi\refresh.png" />
+    <Content Include="scripts\library\ckeditor\skins\moonocolor\images\lock_open.png" />
+    <Content Include="scripts\library\ckeditor\skins\moonocolor\images\lock.png" />
+    <Content Include="scripts\library\ckeditor\skins\moonocolor\images\refresh.png" />
+    <Content Include="scripts\library\ckeditor\skins\moonocolor\images\spinner.gif" />
+    <Content Include="scripts\library\ckeditor\skins\moono\dialog.css" />
+    <Content Include="scripts\library\ckeditor\skins\moono\dialog_ie.css" />
+    <Content Include="scripts\library\ckeditor\skins\moono\dialog_ie7.css" />
+    <Content Include="scripts\library\ckeditor\skins\moono\dialog_ie8.css" />
+    <Content Include="scripts\library\ckeditor\skins\moono\dialog_iequirks.css" />
+    <Content Include="scripts\library\ckeditor\skins\moono\editor.css" />
+    <Content Include="scripts\library\ckeditor\skins\moono\editor_gecko.css" />
+    <Content Include="scripts\library\ckeditor\skins\moono\editor_ie.css" />
+    <Content Include="scripts\library\ckeditor\skins\moono\editor_ie7.css" />
+    <Content Include="scripts\library\ckeditor\skins\moono\editor_ie8.css" />
+    <Content Include="scripts\library\ckeditor\skins\moono\editor_iequirks.css" />
+    <Content Include="scripts\library\ckeditor\skins\moono\icons.png" />
+    <Content Include="scripts\library\ckeditor\skins\moono\icons_hidpi.png" />
+    <Content Include="scripts\library\ckeditor\skins\moono\images\arrow.png" />
+    <Content Include="scripts\library\ckeditor\skins\moono\images\close.png" />
+    <Content Include="scripts\library\ckeditor\skins\moono\images\hidpi\close.png" />
+    <Content Include="scripts\library\ckeditor\skins\moono\images\hidpi\lock_open.png" />
+    <Content Include="scripts\library\ckeditor\skins\moono\images\hidpi\lock.png" />
+    <Content Include="scripts\library\ckeditor\skins\moono\images\hidpi\refresh.png" />
+    <Content Include="scripts\library\ckeditor\skins\moono\images\lock_open.png" />
+    <Content Include="scripts\library\ckeditor\skins\moono\images\lock.png" />
+    <Content Include="scripts\library\ckeditor\skins\moono\images\refresh.png" />
+    <Content Include="scripts\library\ckeditor\skins\moono\images\spinner.gif" />
+    <Content Include="scripts\library\ckeditor\skins\office2013\dialog.css" />
+    <Content Include="scripts\library\ckeditor\skins\office2013\editor.css" />
+    <Content Include="scripts\library\ckeditor\skins\office2013\icons.png" />
+    <Content Include="scripts\library\ckeditor\skins\office2013\icons_hidpi.png" />
+    <Content Include="scripts\library\ckeditor\skins\office2013\images\arrow.png" />
+    <Content Include="scripts\library\ckeditor\skins\office2013\images\close.png" />
+    <Content Include="scripts\library\ckeditor\skins\office2013\images\hidpi\close.png" />
+    <Content Include="scripts\library\ckeditor\skins\office2013\images\hidpi\lock_open.png" />
+    <Content Include="scripts\library\ckeditor\skins\office2013\images\hidpi\lock.png" />
+    <Content Include="scripts\library\ckeditor\skins\office2013\images\hidpi\refresh.png" />
+    <Content Include="scripts\library\ckeditor\skins\office2013\images\lock_open.png" />
+    <Content Include="scripts\library\ckeditor\skins\office2013\images\lock.png" />
+    <Content Include="scripts\library\ckeditor\skins\office2013\images\refresh.png" />
+    <Content Include="scripts\library\ckeditor\styles.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="scripts\library\ckeditor\skins\moono\readme.md" />
+    <Content Include="scripts\library\ckeditor\skins\moonocolor\readme.md" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64338</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:64338/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

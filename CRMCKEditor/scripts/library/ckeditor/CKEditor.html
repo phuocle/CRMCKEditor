@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript" src="../../../../ClientGlobalContext.js.aspx"></script>
+    <script type="text/javascript" src="./adapters/jquery.js"></script>
+    <script type="text/javascript" src="./jquery.min.js"></script>
+    <script type="text/javascript" src="./ckeditor.js"></script>
+    <script type="text/javascript" src="./promise.7.0.4.min.js"></script>
+    <script type="text/javascript" src="./CRMWebAPI.js"></script>
+    <script type="text/javascript" src="./CRMWebAPIMetadata.js"></script>
+    <script type="text/javascript">
+        var toHex = function (dec) {
+            return parseInt(dec, 10).toString(16);
+        };
+        var getURLParameter = function (name) {
+            return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1].replace(/\+/g, '%20')) || null;
+        };
+        var Xrm;
+        $(document).ready(function () {
+            var getFieldName = function () {
+                var data = getURLParameter("data").split("|");
+                for (var i = 0; i < data.length; i++)
+                    if (data[i].split("=")[0].toLowerCase() == "field")
+                        return data[i].split("=")[1];
+                alert("Please enter FieldName for binding CKEditor text value");
+                return "";
+            };
+            var getSkinName = function () {
+                var data = getURLParameter("data").split("|");
+                for (var i = 0; i < data.length; i++) {
+                    if (data[i].split("=")[0].toLowerCase() == "skin") {
+                        var skinName = data[i].split("=")[1];
+                        if (skinName === "moono" || skinName === "moonocolor" || skinName === "office2013")
+                            return skinName;
+                    }
+                }
+                return "moono";
+            }
+            var getEnabledPlaceHolder = function () {
+                var data = getURLParameter("data").split("|");
+                for (var i = 0; i < data.length; i++)
+                    if (data[i].split("=")[0].toLowerCase() == "enabledplaceholder")
+                        return data[i].split("=")[1].toLowerCase() === "true";
+                return false;
+            }
+            var getEntities = function () {
+                var data = getURLParameter("data").split("|");
+                for (var i = 0; i < data.length; i++)
+                    if (data[i].split("=")[0].toLowerCase() == "entities")
+                        return data[i].split("=")[1].toLowerCase();
+                return "all";
+            }
+            var storeAttribute = function () {
+                var value = CKEDITOR.instances.RTEditor.getData();
+                value = value.replace(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/g, function (match, p1, p2, p3) {
+                    return "#" + toHex(p1) + toHex(p2) + toHex(p3);
+                });
+                Xrm.Page.getAttribute(attributeName).setValue(value);
+            };
+
+            var attributeName = getFieldName();
+            if (attributeName.length == 0) return;
+            CKEDITOR.Skin = getSkinName();
+            CKEDITOR.EnabledPlaceHolder = getEnabledPlaceHolder();
+            CKEDITOR.Entities = getEntities();
+            var Xrm = window.parent.Xrm;
+            var text = Xrm.Page.getAttribute(attributeName).getValue() || "";
+            document.getElementById('RTEditor').value = text;
+            CKEDITOR.on('instanceReady', function (ev) {
+                CKEDITOR.instances.RTEditor.on('change', function () {
+                    storeAttribute();
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <textarea class="ckeditor" cols="80" id="RTEditor" name="RTEditor" rows="10"></textarea>
+</body>
+</html>
